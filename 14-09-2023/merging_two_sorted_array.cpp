@@ -28,5 +28,18 @@ int main(){
 			k++;
 		}
 	}
+	while(j<m){
+		out[k] = b[j];
+		j++;
+		k++;
+	}
+	while(i<n){
+		out[k] = a[i];
+		i++;
+		k++;
+	}
+	for(int i=0;i<n+m;i++){
+		cout<<out[i]<<" ";
+	}
 	return 0;
 }
