@@ -49,7 +49,7 @@ int main(){
 	Complex c1(1,2);
 	Complex c2(2,3);
 	Complex c3 = c1+c2;
-	Complex c4 = c1.operator+(c2); // equivalent to previous lin
+	Complex c4 = c1.operator+(c2); // equivalent to previous line
 	c3.display();
 	return 0;
 }

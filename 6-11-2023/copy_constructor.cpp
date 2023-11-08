@@ -44,6 +44,13 @@ public:
 		seats = X.seats;
 	}
 
+	// Car(Car& X){
+	// 	name = X.name;
+	// 	price = X.price;
+	// 	mileage = X.mileage;
+	// 	seats = X.seats;
+	// }
+
 	void display(){
 		cout << "name: " << name <<endl;
 		cout << "price: " << price <<endl;
