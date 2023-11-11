@@ -23,6 +23,7 @@ public:
 
 strings operator+(strings s1,strings s2){
 	char * ans = new char[strlen(s1.str)+1];
+	strcpy(ans,s1.str);
 	strcat(ans,s2.str);
 	return strings(ans);
 }
