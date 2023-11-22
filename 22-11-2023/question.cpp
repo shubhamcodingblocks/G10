@@ -1,66 +1,67 @@
-#include <iostream>
+// Make a class named Fruit with a data member to 
+// calculate the number of fruits in a basket. 
+// Create two other class named Apples and Mangoes to 
+// calculate the number of apples and mangoes in the basket. 
+// Print the number of fruits of each type and the total 
+// number of fruits in the basket.
+
+#include<iostream>
 using namespace std;
 
-class Fruit {
-protected:
-    int totalFruits;
-
+class Fruits{
 public:
-    Fruit() : totalFruits(0) {}
-
-    void addFruit() {
-        totalFruits ++;
-    }
-
-    int getTotalFruits(){
-        return totalFruits;
-    }
+	int total_fruits;
+	Fruits(){
+		total_fruits = 0;
+	}
+	void addFruit(){
+		total_fruits ++;
+	}
+	int getTotalFruits(){
+		return total_fruits;
+	}
 };
 
-class Apples : public Fruit {
-private:
-    int applesCount;
-
+class Apples : public Fruits{
 public:
-    Apples() : applesCount(0) {}
-
-    void addApples() {
-        applesCount ++;
-        addFruit();
-    }
-
-    int getApplesCount() {
-        return applesCount;
-    }
+	int count_apples;
+	Apples(){
+		count_apples = 0;
+	}
+	void addApples(){
+		count_apples++;
+		addFruit();
+	}
+	int getTotalApples(){
+		return count_apples;
+	}
 };
 
-class Mangoes : public Fruit {
-private:
-    int mangoesCount;
-
+class Mangoes : public Fruits{
 public:
-    Mangoes() : mangoesCount(0) {}
-
-    void addMangoes() {
-        mangoesCount ++;
-        addFruit();
-    }
-
-    int getMangoesCount() const {
-        return mangoesCount;
-    }
+	int count_mangoes;
+	Mangoes(){
+		count_mangoes = 0;
+	}
+	void addMangoes(){
+		count_mangoes++;
+		addFruit();
+	}
+	int getTotalMangoes(){
+		return count_mangoes;
+	}
 };
 
-int main() {
-    Apples applesBasket;
-    applesBasket.addApples();
-
-    Mangoes mangoesBasket;
-    mangoesBasket.addMangoes();
-    cout << "Number of Apples: " << applesBasket.getApplesCount() << endl;
-    cout << "Number of Mangoes: " << mangoesBasket.getMangoesCount() << endl;
-    cout << "Total Number of Fruits in the Basket: " << applesBasket.getTotalFruits() + mangoesBasket.getTotalFruits() << endl;
-
-    return 0;
+int main(){
+	Apples a;
+	Mangoes m;
+	a.addApples();
+	a.addApples();
+	m.addMangoes();
+	m.addMangoes();
+	m.addMangoes();
+	cout << a.getTotalApples() << endl;
+	cout << m.getTotalMangoes() << endl;
+	cout << a.getTotalFruits() + m.getTotalFruits() << endl;
+	return 0;
 }
-
